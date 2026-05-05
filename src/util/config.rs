@@ -1,4 +1,5 @@
 use directories::ProjectDirs;
+use indexmap::IndexMap;
 use std::{
     collections::HashMap,
     fs::{self},
@@ -33,7 +34,7 @@ pub struct Config {
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct ConfigFile {
     pub config: Config,
-    pub templates: HashMap<String, Template>,
+    pub templates: IndexMap<String, Template>,
 }
 
 const ERROR_TEXT: &str =
